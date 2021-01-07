@@ -12,7 +12,7 @@ class Customer{
  
 class User extends Customer{
  	protected static $name = 'Awais Fiaz';
-	// Method overriding example (here using "self","static" would mean current class's  if exists otherwise parent's propety)
+	// Method overriding example (here using "self","static" would mean current class's property if exists otherwise parent's propety)
 	/*
 	public static function getName(){
 		echo self::$name;
