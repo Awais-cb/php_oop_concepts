@@ -1,11 +1,11 @@
 <?php
+// A static property can be accessed from a method in the same class using the self keyword and double colon (::):
 class Customer{
 	protected static $name = 'Awais';
-	
 	public static function getName(){
-		// using "self" would mean return parent's propety
+		// using "self" would mean return parent's/current class's propety
 		echo self::$name;
-		// using "static" would mean return child's propety which defines late static binding
+		// using "static" would mean return child's propety if defined otherwise current class's property would be returned (which defines late static binding)
 		return static::$name;
 	}
 }
