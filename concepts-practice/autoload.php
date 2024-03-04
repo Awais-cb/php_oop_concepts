@@ -1,8 +1,6 @@
 <?php
 
 spl_autoload_register(function ($class) {
-    echo $class; // Output the value of $class for debugging purposes
-
     // Convert namespace separator to directory separator
     $classPath = str_replace('\\', DIRECTORY_SEPARATOR, $class);
 
