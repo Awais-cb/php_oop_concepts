@@ -11,8 +11,6 @@ use \User as user;
 $userIntro = new user\UserIntro();
 $userIntro->displayName();
 
-echo  "******************************";
-
 $doctorIntro = new intro\DoctorIntro();
 $doctorIntro->displayName();
 
