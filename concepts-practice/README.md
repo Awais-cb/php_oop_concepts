@@ -166,3 +166,7 @@ Explanation:
 - Then, we require the class file using `require_once` by appending the file path to the directory where our classes are stored.
 
 In this way, whenever you create a new class in the `src` directory with a namespace, PHP will automatically load it when needed, making your code more maintainable and scalable.
+
+
+## SERVICE, SERVICE PROVIDERS, SERVICE CONTAINER
+https://sam-ngu.medium.com/laravel-service-provider-in-simple-english-a0473991ee4c
