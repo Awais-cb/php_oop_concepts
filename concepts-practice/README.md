@@ -170,3 +170,34 @@ In this way, whenever you create a new class in the `src` directory with a names
 
 ## SERVICE, SERVICE PROVIDERS, SERVICE CONTAINER
 https://sam-ngu.medium.com/laravel-service-provider-in-simple-english-a0473991ee4c
+
+
+## FACADES
+https://medium.com/@sanaatrash09/what-is-facades-in-laravel-and-why-do-we-use-them-215b52898a78
+
+Facades provide a static interface to classes that are available in the application’s service container (which is a place to store variables and objects to use them when we need). Which mean that we can use functions without making an object from class.
+
+e.g
+
+SERVICE
+
+```
+use Illuminate\Auth\AuthManager;
+ 
+public function index()
+{
+    $auth = new AuthManager();
+    $user = $auth->user();
+}
+```
+
+FACADE
+
+```
+use Illuminate\Support\Facades\Auth;
+
+public function index()
+{
+    $user = Auth::user();
+}
+```
