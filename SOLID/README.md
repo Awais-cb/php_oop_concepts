@@ -60,6 +60,45 @@ class Square extends Rectangle {
 ```
 To follow LSP, we can refactor the classes to ensure that replacing instances of the base class with instances of its subclasses doesn't alter the program's behavior.
 
+```php
+class Rectangle {
+    protected $width;
+    protected $height;
+
+    public function setWidth($width) {
+        $this->width = $width;
+    }
+
+    public function setHeight($height) {
+        $this->height = $height;
+    }
+
+    public function getWidth() {
+        return $this->width;
+    }
+
+    public function getHeight() {
+        return $this->height;
+    }
+
+    public function area() {
+        return $this->width * $this->height;
+    }
+}
+
+class Square extends Rectangle {
+    public function setWidth($width) {
+        parent::setWidth($width);
+        parent::setHeight($width); // Ensures width and height are the same for squares
+    }
+
+    public function setHeight($height) {
+        parent::setHeight($height);
+        parent::setWidth($height); // Ensures width and height are the same for squares
+    }
+}
+```
+
 ### 4. Interface Segregation Principle (ISP)
 **Definition**: Clients should not be forced to depend on interfaces they do not use.
 
