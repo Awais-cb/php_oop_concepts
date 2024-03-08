@@ -92,4 +92,46 @@ class Notification {
 ```
 To follow DIP, we can inject `EmailService` as a dependency into the `Notification` class, allowing us to easily switch to a different email service implementation without modifying the `Notification` class.
 
+```php
+// Interface for EmailService
+interface EmailService {
+    public function sendEmail($to, $subject, $message);
+}
+
+// Concrete implementation of EmailService using SMTP
+class SmtpEmailService implements EmailService {
+    public function sendEmail($to, $subject, $message) {
+        // Send email using SMTP
+        echo "Sending email to $to via SMTP with subject '$subject' and message: $message<br>";
+    }
+}
+
+// Concrete implementation of EmailService using a third-party API
+class ThirdPartyEmailService implements EmailService {
+    public function sendEmail($to, $subject, $message) {
+        // Send email using a third-party API
+        echo "Sending email to $to via third-party API with subject '$subject' and message: $message<br>";
+    }
+}
+
+// Notification class depends on EmailService via constructor injection
+class Notification {
+    private $emailService;
+    
+    public function __construct(EmailService $emailService) {
+        $this->emailService = $emailService;
+    }
+    
+    public function sendNotification($to, $message) {
+        $this->emailService->sendEmail($to, 'New Notification', $message);
+    }
+}
+
+// Usage
+$smtpEmailService = new SmtpEmailService();
+$notification = new Notification($smtpEmailService);
+$notification->sendNotification('example@example.com', 'This is a notification message');
+
+```
+
 These examples illustrate how SOLID principles help in creating code that is easier to understand, maintain, and extend over time.
