@@ -82,3 +82,6 @@ Certainly! Let's discuss the new features introduced in PHP 8 along with simple 
    ```
 
 These features aim to improve the readability, simplicity, and performance of PHP code. They make coding in PHP more efficient and enjoyable.
+
+6. **Just in Time Compilation (JIT):**
+- JIT, or Just-In-Time compilation, in PHP 8 is like having a super-fast assistant who translates your PHP code into a language the computer understands just before it's needed. Instead of explaining your code line by line every time, this assistant quickly translates it into a form the computer can understand directly before it's run. This helps speed up the execution of your PHP scripts because the computer doesn't have to spend time figuring out what each line of code means every time it's run. It's like having a handy translator who works on demand to make things faster.
